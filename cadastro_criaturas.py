@@ -50,13 +50,8 @@ def cadastrar():
 def listar():
     print('====== LISTAR ======')
     listacao = criaturas
-    print('Confirma a listação dos cadastros? [s/n]')
-    confirma = str(input('===>'))
-    if confirma.lower() == 's':
-        print(criaturas[1])
-        return True
-
-    return False
+    print(criaturas) 
+    return True
 
 def editar():
     return None
