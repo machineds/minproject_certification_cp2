@@ -10,11 +10,11 @@
     5. Remover
     5. Salvar os dados em um arquivo para não haver perdas de informações.
 #### Objetivo do Desenvolvimento de Ferramentas:
-    Tarefa 1: Ler o arquivo ao iniciar o programa (+0,5 pontos) 
+    Tarefa 1: Ler o arquivo ao iniciar o programa (+0,5 pontos) (V)
 
-    Tarefa 2: Desenvolver funcionalidade listar (+0,5 pontos)
+    Tarefa 2: Desenvolver funcionalidade listar (+0,5 pontos) (-)
 
-    Tarefa 3: Adicionar 3 atributos, sendo pelo menos um numérico (+0,5 pontos)
+    Tarefa 3: Adicionar 3 atributos, sendo pelo menos um numérico (+0,5 pontos) (V)
 
     Tarefa 4: Checar valores inválidos ou vazios em loop (+0,5 pontos) 
 

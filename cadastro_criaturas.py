@@ -25,18 +25,28 @@ def salvar_arquivo(criaturas):
 
 def imprimir_criatura(criatura):
     for atributo, valor in criatura.items():
-        print(atributo[0], valor[0])
-        return True
-
+        print(atributo, valor)
 def ler_criatura():
+    condicao = True
+    while condicao:
+        nome = input('Entre com o nome da criatura mágica: ')
+        especie = input('Entre com a espécie: ')
+        habitat = input('Qual o habitat da criatura? ')
+        poder = input('Qual é a habilidade principal da criatura? ')
+        level = input('Digite o nível da criatura: ')
+        if nome == '' and especie != '' and habitat == '' and poder == '' or level == str:
+            print('Valor inválido.')
+        else:
+            condicao = False
+
     criatura = {
-        'nome_criatura': input('Entre com o nome da criatura mágica: '),
-        'especie_criatura': input('Entre com a espécie: '),
-        'habitat_criatura': input('Qual o habitat da criatura?'),
-        'poder_criatura': input('Qual é a habilidade principal da criatura?'),
-        'level_criatura': int(input('Nível da criatura:'))     
+        'nome_criatura:': nome,
+        'especie_criaturaa:': especie,
+        'habitat_criatur:': habitat,
+        'poder_criatura:': poder,
+        'level_criatura:': level
     }
-    
+
     return criatura
 
 def cadastrar():
@@ -53,10 +63,9 @@ def cadastrar():
 
 def listar():
     print('====== LISTAR ======')
-    lista_criaturas = criaturas
-    print(lista_criaturas) 
-    
-    return True
+    for criatura in criaturas:
+        imprimir_criatura(criatura)
+
 
 def editar():
     return None
@@ -70,8 +79,7 @@ def menu():
         'c': 'Cadastrar',
         'l': 'Listar',
         'e': 'Editar',
-        'r': 'Remover',
-        'i': 'Imprimir_criatura'
+        'r': 'Remover'
     }
 
     # imprime todas as descrições
@@ -88,11 +96,8 @@ def menu():
     elif opcao_escolhida == 'c':
         criatura = cadastrar()
         return True
-    elif opcao_escolhida == 'i':
-        criatura = imprimir_criatura(criatura)
-        return True
     elif opcao_escolhida == 'l':
-        criatura = listar()
+        listar()
         return True    
     elif opcao_escolhida == 's':
         print('Realmente deseja sair? [s/n]')
@@ -103,12 +108,7 @@ def menu():
         return True
     
 # aplicação principal
-read_archive0 = open('cadastro_criaturas.py', 'r')
-read_archive1 = open('personagens.json', 'r')
-
-print(read_archive0)
-print(read_archive1)
-print("Seja bem vindo ao cadastro de criaturas mágicas!")
-
+criaturas = ler_arquivo()
+print(criaturas)
 while menu():
     print('--------------------------------------') 
