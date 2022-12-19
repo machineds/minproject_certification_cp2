@@ -94,6 +94,12 @@ def menu():
         return True
 
 # aplicação principal
+read_archive0 = open('cadastro_criaturas.py', 'r')
+read_archive1 = open('personagens.json', 'r')
+
+print(read_archive0)
+print(read_archive1)
 print("Seja bem vindo ao cadastro de criaturas mágicas!")
+
 while menu():
     print('--------------------------------------') 
