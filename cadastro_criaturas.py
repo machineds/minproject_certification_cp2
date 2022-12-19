@@ -25,12 +25,16 @@ def salvar_arquivo(criaturas):
 
 def imprimir_criatura(criatura):
     for atributo, valor in criatura.items():
-        print(atributo, '-', valor)
+        print(atributo[0], valor[0])
+        return True
 
 def ler_criatura():
     criatura = {
-        'nome': input('Entre com o nome da criatura mágica: '),
-        'espécie': input('Entre com a espécie: ')
+        'nome_criatura': input('Entre com o nome da criatura mágica: '),
+        'especie_criatura': input('Entre com a espécie: '),
+        'habitat_criatura': input('Qual o habitat da criatura?'),
+        'poder_criatura': input('Qual é a habilidade principal da criatura?'),
+        'level_criatura': int(input('Nível da criatura:'))     
     }
     
     return criatura
@@ -49,8 +53,9 @@ def cadastrar():
 
 def listar():
     print('====== LISTAR ======')
-    listacao = criaturas
-    print(criaturas) 
+    lista_criaturas = criaturas
+    print(lista_criaturas) 
+    
     return True
 
 def editar():
@@ -65,7 +70,8 @@ def menu():
         'c': 'Cadastrar',
         'l': 'Listar',
         'e': 'Editar',
-        'r': 'Remover'
+        'r': 'Remover',
+        'i': 'Imprimir_criatura'
     }
 
     # imprime todas as descrições
@@ -82,6 +88,9 @@ def menu():
     elif opcao_escolhida == 'c':
         criatura = cadastrar()
         return True
+    elif opcao_escolhida == 'i':
+        criatura = imprimir_criatura(criatura)
+        return True
     elif opcao_escolhida == 'l':
         criatura = listar()
         return True    
@@ -92,7 +101,7 @@ def menu():
             print('Adeus!')
             return False
         return True
-
+    
 # aplicação principal
 read_archive0 = open('cadastro_criaturas.py', 'r')
 read_archive1 = open('personagens.json', 'r')
